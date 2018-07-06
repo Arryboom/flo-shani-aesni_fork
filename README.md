@@ -2,7 +2,7 @@
 ## Add some compile tips on centos7.3  
 ## forked from  https://github.com/armfazh/flo-shani-aesni  
 
-For successful compile it on centos7.3,you can follow these steps:  
+##For successful compile it on centos7.3,you can follow these steps:  
 
 1.Copy or download this project to you linux,here I put them in /tmp/flo-shani-aesni  
 2.Upgrade your gcc compiler to 7.3 or later(default version 4.* is to old to support some new cpu instruction set),here I use GCC 7.3  
@@ -10,7 +10,6 @@ at first you need install old gcc 4.* for compile new version of gcc.(you may ne
 ```
 yum install gcc gcc-c++
 ```
-
 ```
 cd
 curl https://ftp.gnu.org/gnu/gcc/gcc-7.3.0/gcc-7.3.0.tar.gz -O
@@ -26,7 +25,7 @@ make -j$(nproc) && make install
 ```
 then Uninstall old gcc and reset enviroment variable to new gcc.  
 ```
-yum uninstall gcc
+yum remove gcc
 export PATH=/usr/local/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/lib64:$LD_LIBRARY_PATH
 cd /usr/local/bin
@@ -52,15 +51,16 @@ CC=gcc CXX=g++ cmake3 ..
 3.after compile over,you should able to find bench_aegis  bench_aes  bench_sha256 at /tmp/flo-shani-aesni/build/bin  
 
 
-##Release
+## Release
 Not sure it works fine on your enviroment,you may finally need compile it follow tips above.  
 but here I put the three file compiled.  
 > sha256sum *  
 78b739f0efb965d39f51df21646b1b02b42552b492249093528648d6a7d4cb2d  bench_aegis  
 42c8a61f5bbf2a9907b06b62bf94ba05412c0d3dd6131bf1ee557e53d3f41474  bench_aes  
 ae1a6bb9e3e1e4755820f992d301644de73750885c6fb16341043d218c80ccb5  bench_sha256  
+[https://github.com/Arryboom/flo-shani-aesni_fork/releases/download/Init/flo-shani_aesni_release.zip](https://github.com/Arryboom/flo-shani-aesni_fork/releases/download/Init/flo-shani_aesni_release.zip "Compiled_FLO_SHANI_AESNI_BENCH")  
 
-Great Thanks to  Armando Faz-Hernández,Julio López,Ana Karina D. S. de Oliveira  
+Great Thanks to  Armando Faz-Hernández,Julio López,Ana Karina D. S. de Oliveira.  
 
 ## FLO-SHANI-AESNI 
 
